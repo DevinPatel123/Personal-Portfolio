@@ -13,6 +13,9 @@ const navItems = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() =>
+    document.documentElement.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
 
   // Handle scroll behavior
   useEffect(() => {
@@ -29,23 +32,37 @@ export const Navbar = () => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
 
+  // Listen for theme changes
+  useEffect(() => {
+    const updateTheme = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches);
+    };
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => {
+      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', updateTheme);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
+      {/* Navbar */}
       <nav
-        className={cn(
-          "fixed w-full z-40 transition-all duration-300",
-          isScrolled
-            ? "py-3 bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-800/50"
-            : "py-5 bg-transparent"
-        )}
-      >
+  className={cn(
+    "fixed w-full z-40 transition-all duration-300 transition-colors border-b border-border backdrop-blur-md",
+    isScrolled
+      ? "py-3 bg-background/90"
+      : "py-5 bg-transparent"
+  )}
+>
+
         <div className="container flex items-center justify-between">
-          <a
-            className="text-xl font-bold text-white flex items-center pl-6"
-            href="#hero"
-          >
-            <span className="relative z-10">Devin's Portfolio</span>
-          </a>
+         
+          <a className="text-xl font-bold text-foreground transition-colors duration-300 flex items-center pl-6" href="#hero">
+  <span className="relative z-10">Devin's Portfolio</span>
+</a>
 
           {/* Desktop nav */}
           <div className="hidden md:flex space-x-8 mr-16">
@@ -53,7 +70,8 @@ export const Navbar = () => {
               <a
                 key={key}
                 href={item.href}
-                className="text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                style={{ color: isDarkMode ? 'white' : '#374151' }}
+                className="transition-colors duration-300"
               >
                 {item.name}
               </a>
@@ -93,7 +111,8 @@ export const Navbar = () => {
             <a
               key={key}
               href={item.href}
-              className="text-gray-300 hover:text-purple-400 transition-colors duration-300"
+              style={{ color: isDarkMode ? 'white' : '#374151' }}
+              className="transition-colors duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}

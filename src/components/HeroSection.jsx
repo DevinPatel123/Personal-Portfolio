@@ -27,7 +27,7 @@ export const HeroSection = () => {
         <div className="flex flex-col items-center gap-4">
           <div className="w-60 h-60 md:w-72 md:h-72 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 flex items-center justify-center shadow-lg">
             <img
-              src="/headshot.jpg"
+              src={`${import.meta.env.BASE_URL}headshot.jpg`}
               alt="Devin Patel"
               className="w-full h-full object-cover rounded-full border-4 border-white"
             />

@@ -27,7 +27,7 @@ const timelineData = [
       "I'm currently a rising sophomore studying Mechanical Engineering and CS. Around campus I am in a professional business fraternity PCT, the Illinois off-road Baja Team, and the National Organization of Business and Engineering.",
     icon: (
       <img
-        src="/public/UIUCLOGO.PNG"
+        src={`${import.meta.env.BASE_URL}UIUCLOGO.png`}
         alt="UIUC"
         className="w-5 h-5 object-contain"
       />
@@ -42,7 +42,7 @@ const timelineData = [
       "Collaborated with teams to design and develop responsive, user-friendly web interfaces. Focused on performance optimization, accessibility, and modern UI/UX practices using React and Tailwind CSS.",
     icon: (
       <img
-        src="/public/SynchronyWhiteLogo.png"
+        src={`${import.meta.env.BASE_URL}SynchronyWhiteLogo.png`}
         alt="Synchrony"
         className="w-5 h-5 object-contain"
       />

@@ -6,17 +6,20 @@ export const ThemeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
-        const storedTheme = localStorage.getItem("theme")
-        if(storedTheme === "dark") {
-            setIsDarkMode(true);
-            document.documentElement.classList.add("dark");
-            document.documentElement.style.setProperty('--linkedin-fill-color', 'white');  // set white for dark mode
-        }else{
-            localStorage.setItem("theme", "light");
-            setIsDarkMode(false);
-            document.documentElement.style.setProperty('--linkedin-fill-color', 'black');
-        }
-    }, []);
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const isDark = storedTheme === "dark" || (!storedTheme && prefersDark);
+    setIsDarkMode(isDark);
+
+    if (isDark) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.setProperty('--linkedin-fill-color', 'white');
+    } else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.setProperty('--linkedin-fill-color', 'black');
+    }
+}, []);
 
     const toggleTheme = () => {
         if (isDarkMode){

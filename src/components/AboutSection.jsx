@@ -9,7 +9,7 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="flex justify-center md:justify-start">
             <img
-              src="/IMG_2322.jpg"
+              src={`${import.meta.env.BASE_URL}IMG_2322.jpg`}
               alt="Wide Profile"
               className="w-full max-w-2xl rounded-2xl shadow-2xl object-cover"
             />

@@ -6,7 +6,7 @@ const projects = [
     id: 1,
     title: "Portable Cornhole Set",
     description: "A custom-designed cornhole set built for portability with built-in drink holders.",
-    image: "/public/CornholeSet.png",
+    image: "/CornholeSet.png",
     tags: ["Fusion 360", "Woodworking", "CAD"],
     category: "Mechanical Engineering",
     demoUrl: "https://docs.google.com/document/d/1BQ_wNzm1Vng2BDtVjh0X8MWFVgvtGfjQQJilJynsIa0/edit?usp=sharing",
@@ -16,7 +16,7 @@ const projects = [
     id: 4,
     title: "Synchrony Shield",
     description: "Hackathon Runner-Up for improving AI safety.",
-    image: "/public/syn1.png",
+    image: "/syn1.png",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Web Design"],
     category: "Computer Science",
     demoUrl: "https://synchronyshield.vercel.app/",
@@ -26,7 +26,7 @@ const projects = [
     id: 2,
     title: "2.4 GHz Dipole Antenna",
     description: "Built and tested a 2.4 GHz dipole antenna, meant for bluetooth and wifi.",
-    image: "/public/Dipole.png",
+    image: "/Dipole.png",
     tags: ["Antenna", "Simulation", "RF", "CAD"],
     category: "Mechanical Engineering",
     demoUrl: "https://docs.google.com/presentation/d/1veqBcrLbCDeXf5Dx8mNFr8KZ91V1CBr6/edit?usp=sharing&ouid=114384835196500073889&rtpof=true&sd=true",
@@ -37,7 +37,7 @@ const projects = [
     id: 3,
     title: "CycleSip",
     description: "Designed and built an adjustable, gyroscopic bottle holder for bikes.",
-    image: "/public/CycleSip.png",
+    image: "/CycleSip.png",
     tags: ["Product Design", "Fusion 360", "Prototyping"],
     category: "Mechanical Engineering",
     demoUrl: "https://drive.google.com/file/d/1_74dMWi9ZOENKP7YhUOC-I3DCMZy1ZkQ/view?usp=sharing",
@@ -47,7 +47,7 @@ const projects = [
     id: 5,
     title: "PicklePals",
     description: "Multi or single player, interactive pickleball video game.",
-    image: "/public/newpicklelogo.png",
+    image: "/newpicklelogo.png",
     tags: ["Unity", "C#", "Physics", "Game Development"],
     category: "Computer Science",
     demoUrl: "https://drive.google.com/file/d/1SFgwVygvY5BAdc1dz1VMwfR7Bbc4atYR/view?usp=sharing",
@@ -96,7 +96,7 @@ export function ProjectsSection() {
             >
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={project.image}
+                  src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   onError={(e) => (e.target.style.display = "none")}
