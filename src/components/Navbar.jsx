@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -68,7 +69,7 @@ export const Navbar = () => {
 </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex space-x-8 mr-16">
+          <div className="hidden md:flex space-x-8 mr-6">
             {navItems.map((item, key) => (
               <a
                 key={key}
@@ -81,12 +82,16 @@ export const Navbar = () => {
             ))}
           </div>
 
+          <div className="flex items-center ml-4">
+            <ThemeToggle />
+          </div>
+
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="md:hidden p-2 text-white z-50"
+            className="md:hidden p-2 z-50"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} color={isDarkMode ? 'white' : 'black'} /> : <Menu size={24} color={isDarkMode ? 'white' : 'black'} />}
           </button>
         </div>
       </nav>
