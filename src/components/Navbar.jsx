@@ -64,25 +64,25 @@ export const Navbar = () => {
 
         <div className="container flex items-center justify-between">
          
-          <a className="text-xl font-bold text-foreground transition-colors duration-300 flex items-center pl-6" href="#hero">
-  <span className="relative z-10">Devin's Portfolio</span>
-</a>
+          <a className="text-xl font-bold text-foreground transition-colors duration-300 flex items-center pl-6 flex-grow" href="#hero">
+            <span className="relative z-10">Devin's Portfolio</span>
+          </a>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex space-x-8 mr-6">
-            {navItems.map((item, key) => (
-              <a
-                key={key}
-                href={item.href}
-                style={{ color: isDarkMode ? 'white' : '#374151' }}
-                className="transition-colors duration-300"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
+          <div className="flex items-center gap-2">
+            {/* Desktop nav */}
+            <div className="hidden md:flex space-x-8 mr-6">
+              {navItems.map((item, key) => (
+                <a
+                  key={key}
+                  href={item.href}
+                  style={{ color: isDarkMode ? 'white' : '#374151' }}
+                  className="transition-colors duration-300"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
 
-          <div className="flex items-center ml-4">
             <ThemeToggle />
           </div>
 
