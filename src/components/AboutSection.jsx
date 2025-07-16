@@ -7,7 +7,7 @@ export const AboutSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-center md:justify-start mt-16 md:mt-0">
             <img
               src={`${import.meta.env.BASE_URL}IMG_2322.jpg`}
               alt="Wide Profile"
