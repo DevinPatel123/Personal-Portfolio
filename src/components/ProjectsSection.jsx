@@ -13,13 +13,13 @@ const projects = [
     githubUrl: null, // No GitHub for this project
   },
   {
-    id: 4,
-    title: "Synchrony Shield",
-    description: "Chrome extension that won hackathon Runner-Up for improving AI safety.",
-    image: "/syn1.png",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Web Design"],
+    id: 5,
+    title: "PicklePals",
+    description: "Multi or single player, interactive pickleball video game.",
+    image: "/newpicklelogo.png",
+    tags: ["Unity", "C#", "Physics", "Game Development"],
     category: "Computer Science",
-    demoUrl: null,
+    demoUrl: "https://drive.google.com/file/d/1SFgwVygvY5BAdc1dz1VMwfR7Bbc4atYR/view?usp=sharing",
     githubUrl: null
   },
   {
@@ -44,13 +44,13 @@ const projects = [
     githubUrl: null
   },
   {
-    id: 5,
-    title: "PicklePals",
-    description: "Multi or single player, interactive pickleball video game.",
-    image: "/newpicklelogo.png",
-    tags: ["Unity", "C#", "Physics", "Game Development"],
+    id: 4,
+    title: "Synchrony Shield",
+    description: "Chrome extension that won hackathon Runner-Up for improving AI safety.",
+    image: "/syn1.png",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Web Design"],
     category: "Computer Science",
-    demoUrl: "https://drive.google.com/file/d/1SFgwVygvY5BAdc1dz1VMwfR7Bbc4atYR/view?usp=sharing",
+    demoUrl: null,
     githubUrl: null
   },
 ];
