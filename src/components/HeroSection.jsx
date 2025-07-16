@@ -14,7 +14,7 @@ export const HeroSection = () => {
             </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground opacity-0 animate-fade-in-delay-3">
-            I am currently a rising sophomore at the Univeristy of Illinois Urbana-Champaign studying Computer Science and Mechanical Engineering.
+            I am currently a rising sophomore at the Univeristy of Illinois Urbana-Champaign studying Mechanical Engineering and Computer Science.
           </p>
 
           <div className="pt-2 opacity-0 animate-fade-in-delay-4">
@@ -24,7 +24,7 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 mt-8 md:mt-0">
           <div className="w-60 h-60 md:w-72 md:h-72 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 flex items-center justify-center shadow-lg">
             <img
               src={`${import.meta.env.BASE_URL}headshot.jpg`}
@@ -37,7 +37,7 @@ export const HeroSection = () => {
 
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce mb-8 md:mb-0">
+      <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
         <span className="text-sm text-muted-foreground mb-2">Scroll</span>
         <ArrowDown className="h-5 w-5 text-primary" />
       </div>
