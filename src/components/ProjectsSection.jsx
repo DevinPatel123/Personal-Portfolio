@@ -15,12 +15,12 @@ const projects = [
   {
     id: 4,
     title: "Synchrony Shield",
-    description: "Hackathon Runner-Up for improving AI safety.",
+    description: "Chrome extension that won hackathon Runner-Up for improving AI safety.",
     image: "/syn1.png",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Web Design"],
     category: "Computer Science",
-    demoUrl: "https://synchronyshield.vercel.app/",
-    githubUrl: "https://github.com/DevinPatel123/Synchrony-Shield"
+    demoUrl: null,
+    githubUrl: null
   },
   {
     id: 2,
@@ -103,14 +103,33 @@ export function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-3 left-3 flex space-x-2">
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white/10 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/20 transition-all duration-200"
-                  >
-                    <ExternalLink size={14} />
-                  </a>
+                  {project.title === "Synchrony Shield" ? (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/10 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/20 transition-all duration-200"
+                      onClick={e => {
+                        e.preventDefault();
+                        const win = window.open();
+                        if (win) {
+                          win.document.write('<!DOCTYPE html><html><head><title>Demo Down</title></head><body style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;"><h1>Sorry, we had to take the demo down.</h1></body></html>');
+                          win.document.close();
+                        }
+                      }}
+                    >
+                      <ExternalLink size={14} />
+                    </a>
+                  ) : (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/10 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/20 transition-all duration-200"
+                    >
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
