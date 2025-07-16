@@ -17,10 +17,10 @@ export const ContactSection = () => {
             <div>
               <a
                 href="mailto:dpatel021306@gmail.com"
-                className="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-colors duration-200 font-medium w-11/12 mx-auto"
+                className="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white py-4 px-6 rounded-lg transition-colors duration-200 font-medium w-full sm:w-auto whitespace-nowrap min-w-fit"
               >
-                <Mail className="h-5 w-5" />
-                dpatel021306@gmail.com
+                <Mail className="h-5 w-5 shrink-0" />
+                <span className="text-xs">dpatel021306@gmail.com</span>
               </a>
             </div>
             
