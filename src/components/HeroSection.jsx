@@ -12,7 +12,7 @@ export const HeroSection = () => {
                     <span className="text-gradient">Patel</span>
                 </span>
             </h1>
-
+          {/* Add linkedin??? */}
           <p className="text-lg md:text-xl text-muted-foreground opacity-0 animate-fade-in-delay-3">
             I am currently a rising sophomore at the Univeristy of Illinois Urbana-Champaign studying Mechanical Engineering and Computer Science.
           </p>
