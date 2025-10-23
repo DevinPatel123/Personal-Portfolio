@@ -19,7 +19,7 @@ const projects = [
     image: "/newpicklelogo.png",
     tags: ["Unity", "C#", "Physics", "Game Development"],
     category: "Computer Science",
-    demoUrl: "https://drive.google.com/file/d/1SFgwVygvY5BAdc1dz1VMwfR7Bbc4atYR/view?usp=sharing",
+    demoUrl: "https://docs.google.com/presentation/d/1kXw7ERKEYlLjLFYdfFTp-2cCCkjPqETEchIuwzELiHA/edit?usp=sharing",
     githubUrl: null
   },
   {
