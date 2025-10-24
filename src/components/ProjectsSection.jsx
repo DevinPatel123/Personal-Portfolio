@@ -4,7 +4,7 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "Portable Cornhole Set",
+    title: "Repurposed Bed-Frame Materials",
     description: "A custom-designed cornhole set built for portability with built-in drink holders.",
     image: "/CornholeSet.png",
     tags: ["Fusion 360", "Woodworking", "CAD"],
